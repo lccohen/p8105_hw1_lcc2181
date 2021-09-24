@@ -1,0 +1,9 @@
+---
+title: "p8105_hw1_lcc2181"
+author: "Lauren Cohen"
+date: "9/22/2021"
+output: github_document
+---
+
+
+
