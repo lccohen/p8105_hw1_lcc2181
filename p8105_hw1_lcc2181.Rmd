@@ -5,5 +5,36 @@ date: "9/22/2021"
 output: github_document
 ---
 
+## Problem 1
 
+Loading the tidyverse
+
+```{r}
+library(tidyverse)
+```
+
+Creating the data frame. Using 'set.seed' to ensure reproducibility.
+
+```{r}
+set.seed(1)
+
+prob1_df = tibble (
+  norm_samp = rnorm(10),
+  norm_samp_pos = norm_samp > 0,
+  vec_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+  vec_factor = factor(c("high", "high", "high", "medium", "medium", "medium", "low", "low", "low", "low"))
+)
+
+prob1_df
+```
+
+Taking the mean of each variable in the data frame.
+
+```{r}
+mean(pull(prob1_df,norm_samp))
+mean(pull(prob1_df,norm_samp_pos))
+mean(pull(prob1_df,vec_char))
+mean(pull(prob1_df,vec_factor))
+```
+Taking the mean of 'norm_samp' and 'norm_samp_pos' works. Taking the mean of 'vec_char' and 'vec_factor' did not work. When attempting to take the mean of 'vec_char' and 'vec_factor', it returned "NA" with a warning message stating that the argument is not numeric or logical.
 
